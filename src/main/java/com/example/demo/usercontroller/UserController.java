@@ -16,7 +16,7 @@ import com.example.demo.userservice.UserService;
 public class UserController {
 	
 	@Autowired
-	UserService us;
+	private UserService us;
 	
 	@PostMapping("/saveUser")
 	public ResponseEntity<User> userData(@RequestBody User u){
@@ -25,8 +25,8 @@ public class UserController {
 		
 	}
 	
-	@GetMapping("/getUser/{id}")
-	public ResponseEntity<User> getData(@PathVariable ("id") int id){
+	@GetMapping("/{id}")
+	public ResponseEntity<User> getData(@PathVariable  int id){
 		
 		return new ResponseEntity<User>(us.getUserDetails(id),HttpStatus.OK);
 		

@@ -10,38 +10,32 @@ import com.example.demo.userservice.UserService;
 
 @SpringBootTest
 public class UserServiceTest {
-	
+
 	@Autowired
-	UserService us;
-	
+	private UserService us;
+
 	@Autowired
-	UserRepository ur;
-	
-	User u=new User();
-	
-	@Test
-	public void testSaveUserData() {
-		
-		u.setId(2);
-		u.setUserId(102);
-		u.setUserName("Anurag Dhanorkar");
-		u.setUserMobNo(7875324821l);
-		u.setUserSalary(47500);
-		
-		
-		us.saveUserData(u);
-		
-	}
-	
+	private UserRepository ur;
+
+	User u = new User();
+
+	/*
+	 * @Test public void testSaveUserData() {
+	 * 
+	 * u.setId(2); u.setUserId(102); u.setUserName("Anurag Dhanorkar");
+	 * u.setUserMobNo(7875324821l); u.setUserSalary(47500);
+	 * 
+	 * 
+	 * us.saveUserData(u);
+	 * 
+	 * }
+	 */
+
 	@Test
 	public void testGetUserDetails() {
-		
-		 User findAllById = ur.findAllById(1);
-		 
-		 System.out.println(findAllById);
-		
-		
-		
+
+		us.getUserDetails(1);
+
 	}
 
 }
